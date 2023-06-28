@@ -4,8 +4,25 @@ var theMinute=document.getElementById("theMinute");
 var theSecond=document.getElementById("theSecond");
 var theButton=document.getElementById("startButton");
 var theStopButton=document.getElementById("stopButton");
+var selectDays=document.getElementById("selectDays");
 
-var targetTime= new Date().getTime()+(72*3600*1000);
+var selectedSelect=selectDays.value;
+
+/*
+selectDays.onchange="getOption()"
+//var dayprompt=prompt("How Many Days?")
+
+function getOption(){
+    var selectDay=document.getElementById("selectDays");
+    //var value = selectDay.options[selectDay.selectedIndex].value;
+    //var text = selectDay.options[selectDay.selectedIndex].text;
+    return value;
+
+}
+*/
+
+
+var targetTime= new Date().getTime()+(selectedSelect*24*3600*1000);
 var hours;
 var days;
 var minutes;
