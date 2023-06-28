@@ -3,6 +3,7 @@ var theHour=document.getElementById("theHour");
 var theMinute=document.getElementById("theMinute");
 var theSecond=document.getElementById("theSecond");
 var theButton=document.getElementById("startButton");
+var theStopButton=document.getElementById("stopButton");
 
 var targetTime= new Date().getTime()+(72*3600*1000);
 var hours;
@@ -10,9 +11,18 @@ var days;
 var minutes;
 var seconds;
 
-var Interval=setInterval(countdownStart,1000);
 
-var startit=theButton.addEventListener("click",Interval);
+
+var Interval;
+
+theButton.onclick=function(){
+    clearInterval(Interval);
+    Interval=setInterval(countdownStart,1000);
+}
+
+theStopButton.onclick=function(){
+    clearInterval(Interval);
+}
 
 function countdownStart(){
     var currentTime=new Date().getTime();
