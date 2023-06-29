@@ -7,8 +7,14 @@ var theStopButton=document.getElementById("stopButton");
 var theResetButton=document.getElementById("resetButton");
 var selectDays=document.getElementById("selectDays");
 
-var selectedSelect=selectDays.value;
-var targetTime= new Date().getTime()+(selectedSelect*24*3600*1000);
+
+var hours;
+var days;
+var minutes;
+var seconds;
+var Interval;
+
+
 
 selectDays.onchange=function getOption(){
     var selectedSelect=selectDays.value;
@@ -16,12 +22,12 @@ selectDays.onchange=function getOption(){
     
     var Interval;
 
-theButton.onclick=function(){
-    clearInterval(Interval);
-    var selectedSelect=selectDays.value;
-    var targetTime= new Date().getTime()+(selectedSelect*24*3600*1000);
+    theButton.onclick=function(){
+        clearInterval(Interval);
+        var selectedSelect=selectDays.value;
+        var targetTime= new Date().getTime()+(selectedSelect*24*3600*1000);
 
-    Interval=setInterval(countdownStart,1000);
+        Interval=setInterval(countdownStart,1000);
 }
 
 theStopButton.onclick=function(){
@@ -36,26 +42,28 @@ theResetButton.onclick=function(){
     theSecond.innerHTML="00";
 }
 
-function countdownStart(){
+
+
+    function countdownStart(){
 
 
 
-    var currentTime=new Date().getTime();
-    var secondsLeft=(targetTime-currentTime)/1000;
+        var currentTime=new Date().getTime();
+        var secondsLeft=(targetTime-currentTime)/1000;
 
-    var days=Math.floor(secondsLeft/86400);
-    secondsLeft=secondsLeft%86400;
+        var days=Math.floor(secondsLeft/86400);
+        secondsLeft=secondsLeft%86400;
 
-    var hours=Math.floor(secondsLeft/3600);
-    secondsLeft=secondsLeft%3600;
+        var hours=Math.floor(secondsLeft/3600);
+        secondsLeft=secondsLeft%3600;
 
-    var minutes=Math.floor(secondsLeft/60);
-    secondsLeft=Math.floor(secondsLeft%60);
+        var minutes=Math.floor(secondsLeft/60);
+        secondsLeft=Math.floor(secondsLeft%60);
 
-    theDay.innerHTML=days;
-    theHour.innerHTML=hours;
-    theMinute.innerHTML=minutes;
-    theSecond.innerHTML=secondsLeft;
+        theDay.innerHTML=days;
+        theHour.innerHTML=hours;
+        theMinute.innerHTML=minutes;
+        theSecond.innerHTML=secondsLeft;
 }
 
 
@@ -63,11 +71,6 @@ function countdownStart(){
 
 
 
-var hours;
-var days;
-var minutes;
-var seconds;
-var Interval;
 
 /*
 selectDays.onchange="getOption()"
@@ -94,7 +97,8 @@ selectDays.onchange=function(){
 
 
 
-
+// var selectedSelect=selectDays.value;
+// var targetTime= new Date().getTime()+(selectedSelect*24*3600*1000);
 
 
 // var Interval;
