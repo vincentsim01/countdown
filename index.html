@@ -5,8 +5,12 @@
     <link rel="stylesheet" href="css/style.css">
 
 </HEAD>
-<BODY>
-    <div><Span>COUNTDOWN</Span></div>
+<BODY background="galaxy.jpg">
+    <div><Span id="countdownToBrenda">COUNTDOWN TO BRENDA TAN'S <br><span id="openHouse"><b><u>OPEN HOUSE</u></b></span></Span></div>
+    <br>
+    <img id="brendatan" src="openhouse.png">
+    <br>
+    <br><br>
     Days:
     <select id="selectDays" name="Day">
         <option value="None">None</option>
@@ -14,8 +18,17 @@
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
     </select>
-    <div><span id="theDay">00</span>:<span id="theHour">00</span>:<span id="theMinute">00</span>:<span id="theSecond">00</span></div>
+
+    <br><br>
+
+    <div id="theClock"><span id="theDay">00</span>:<span id="theHour">00</span>:<span id="theMinute">00</span>:<span id="theSecond">00</span></div>
+    <br><br>
     <button id="startButton">Start Countdown</button>
     <button id="stopButton">Stop Button</button>
     <button id="resetButton">Reset Button</button>
